@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../../authentication/authentication_manager.dart';
 import 'signup_screen.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
 final VoidCallback onToggleTheme;
@@ -48,9 +49,19 @@ _isLoading = false;
 });
 
 if (user != null) {
-_showMessage('Login successful');
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (_) => HomeScreen(
+        onToggleTheme: widget.onToggleTheme,
+        isDarkMode: widget.isDarkMode,
+      ),
+    ),
+  );
 } else {
-_showMessage('Login failed. Please check your email and password.');
+  _showMessage(
+    'Login failed. Please check your email and password.',
+  );
 }
 }
 
@@ -68,9 +79,17 @@ _isGoogleLoading = false;
 });
 
 if (user != null) {
-_showMessage('Google login successful');
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (_) => HomeScreen(
+        onToggleTheme: widget.onToggleTheme,
+        isDarkMode: widget.isDarkMode,
+      ),
+    ),
+  );
 } else {
-_showMessage('Google sign-in was cancelled or failed');
+  _showMessage('Google sign-in was cancelled or failed');
 }
 }
 
