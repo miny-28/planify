@@ -66,7 +66,7 @@ setState(() {
 _isLoading = true;
 });
 
-final user = await _authManager.signUp(
+await _authManager.signUp(
 name,
 email,
 password,
@@ -78,29 +78,23 @@ setState(() {
 _isLoading = false;
 });
 
-if (user != null) {
 _showMessage('Account created successfully');
 
 await Future.delayed(
-const Duration(milliseconds: 800),
+  const Duration(milliseconds: 800),
 );
 
 if (!mounted) return;
 
 Navigator.pushReplacement(
-context,
-MaterialPageRoute(
-builder: (_) => LoginScreen(
-onToggleTheme: widget.onToggleTheme,
-isDarkMode: widget.isDarkMode,
-),
-),
+  context,
+  MaterialPageRoute(
+    builder: (_) => LoginScreen(
+      onToggleTheme: widget.onToggleTheme,
+      isDarkMode: widget.isDarkMode,
+    ),
+  ),
 );
-} else {
-_showMessage(
-'Failed to create account. Please check your information.',
-);
-}
 }
 
 Future<void> _signUpWithGoogle() async {
