@@ -49,7 +49,7 @@ theme: ThemeData(
 brightness: Brightness.light,
 scaffoldBackgroundColor: Colors.white,
 colorScheme: ColorScheme.fromSeed(
-seedColor: Colors.blue,
+seedColor: const Color(0xFFE99AC4),
 brightness: Brightness.light,
 ),
 inputDecorationTheme: InputDecorationTheme(
@@ -66,7 +66,7 @@ darkTheme: ThemeData(
 brightness: Brightness.dark,
 scaffoldBackgroundColor: Colors.black,
 colorScheme: ColorScheme.fromSeed(
-seedColor: Colors.blue,
+seedColor: const Color(0xFFE99AC4),
 brightness: Brightness.dark,
 ),
 inputDecorationTheme: InputDecorationTheme(
